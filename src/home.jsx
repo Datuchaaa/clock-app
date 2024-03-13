@@ -32,14 +32,13 @@ function Home() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Simple Clock & Weather App</h1>
         <div className="Clock">
-          {time.toLocaleTimeString([], { hour12: false })}
+        {time.toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit' })}
         </div>
         {weather && (
           <div className="Weather">
-            <p>Temperature: {weather.main.temp}°C</p>
-            <p>Weather: {weather.weather[0].description}</p>
+            <p>ტემპერატურა: {weather.main.temp}°C</p>
+            <p>ამინდი: {weather.weather[0].description}</p>
           </div>
         )}
       </header>
