@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./home.scss";
+import dayBack from "./images/dayBackground.png";
+import nightBack from "./images/nightBackground.jpg";
 
 function Home() {
   const [time, setTime] = useState(new Date());
@@ -29,18 +31,42 @@ function Home() {
     fetchWeather();
   }, []);
 
+  const isNightTime = () => {
+    const hour = time.getHours();
+    return hour >= 20 || hour < 6;
+  };
+
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{ backgroundImage: `url(${isNightTime() ? nightBack : dayBack})` }}
+    >
       <header className="App-header">
-        <div className="Clock">
-        {time.toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit' })}
+        <div className="info">
+          <p>
+            jbskjdfasdbkfnlaksbjdhlfjkasjdbkja,hs.dbajlks,dbcavjls,mdnfablks,jdvfalksjdfablhsmdbhfbva,jsdf
+          </p>
         </div>
-        {weather && (
-          <div className="Weather">
-            <p>ტემპერატურა: {weather.main.temp}°C</p>
-            <p>ამინდი: {weather.weather[0].description}</p>
+        <div className="clock-weather">
+          <div className="Clock">
+            {time.toLocaleTimeString([], {
+              hour12: false,
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
           </div>
-        )}
+          {weather && (
+            <div className="Weather">
+              <p>ტემპერატურა: {weather.main.temp}°C</p>
+              <p>ამინდი: {weather.weather[0].description}</p>
+            </div>
+          )}
+        </div>
+        <div className="more-btn">
+          <button>
+            M O R E <div className="arrow down"></div>
+          </button>
+        </div>
       </header>
     </div>
   );

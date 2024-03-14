@@ -1,12 +1,46 @@
 body {
-  margin: 0;
-  padding: 0;
-  background-image: url("../public/images/backimage.png"); /* Adjust the path to your image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
+  .App {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
 
+    .App-header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      .clock-weather {
+        display: block;
+      }
+      .more-btn {
+        cursor: pointer;
+        height: 56px;
+        position: relative;
+        button {
+          cursor: pointer;
+          padding: 20px;
+          font-weight: 700;
+          border: none;
+          text-align: left;
+          width: 146px;
+          height: 56px;
+          color: rgba(48, 48, 48, 1);
+
+          background-color: rgba(255, 255, 255, 1);
+          border-radius: 35px;
+        }
+        .arrow {
+          width: 40px;
+          height: 40px;
+          border-radius: 100%;
+          background: rgba(48, 48, 48, 1);
+          position: absolute;
+          right: 12px;
+          top: 9px;
+        }
+      }
+    }
+  }
   .Clock {
     font-weight: 700;
     font-size: 200px;
