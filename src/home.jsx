@@ -44,25 +44,26 @@ function Home() {
       <header className="App-header">
         <div className="info">
           <p>
-            jbskjdfasdbkfnlaksbjdhlfjkasjdbkja,hs.dbajlks,dbcavjls,mdnfablks,jdvfalksjdfablhsmdbhfbva,jsdf
+            jbskjdfasdbkfnlaksbjdhlfjkasjdbkja,hs
           </p>
         </div>
-        <div className="clock-weather">
-          <div className="Clock">
-            {time.toLocaleTimeString([], {
-              hour12: false,
-              hour: "2-digit",
-              minute: "2-digit",
-            })}
-          </div>
-          {weather && (
-            <div className="Weather">
-              <p>ტემპერატურა: {weather.main.temp}°C</p>
-              <p>ამინდი: {weather.weather[0].description}</p>
+        <div className="clock-weather-btn">
+          <div className="clock-weather">
+            <div className="Clock">
+              {time.toLocaleTimeString([], {
+                hour12: false,
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
             </div>
-          )}
-        </div>
-        <div className="more-btn">
+            {weather && (
+              <div className="Weather">
+                <p>ტემპერატურა: {weather.main.temp}°C</p>
+                <p>ამინდი: {weather.weather[0].description}</p>
+              </div>
+            )}
+          </div>
+
           <button>
             M O R E <div className="arrow down"></div>
           </button>
