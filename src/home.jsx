@@ -58,8 +58,9 @@ function Home() {
             </div>
             {weather && (
               <div className="Weather">
-                <p>ტემპერატურა: {weather.main.temp}°C</p>
-                <p>ამინდი: {weather.weather[0].description}</p>
+                <p>Lcation : {weather.name}</p>
+                <p>Temperature : {weather.main.temp}°C</p>
+                <p>Description : {weather.weather[0].description}</p>
               </div>
             )}
           </div>
