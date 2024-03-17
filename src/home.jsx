@@ -7,14 +7,7 @@ import nightBack from "./images/nightBackground.jpg";
 function Home() {
   const [time, setTime] = useState(new Date());
   const [weather, setWeather] = useState(null);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+  const [worldTime, setWorldTime] = useState(null);
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -31,6 +24,27 @@ function Home() {
     fetchWeather();
   }, []);
 
+  useEffect(() => {
+    const fetchWorldTime = async () => {
+      try {
+        const response = await axios.get("https://worldtimeapi.org/api/ip");
+        setWorldTime(response.data);
+      } catch (error) {
+        console.error("Error fetching world time data:", error);
+      }
+    };
+
+    fetchWorldTime();
+  }, []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   const isNightTime = () => {
     const hour = time.getHours();
     return hour >= 20 || hour < 6;
@@ -43,9 +57,7 @@ function Home() {
     >
       <header className="App-header">
         <div className="info">
-          <p>
-            jbskjdfasdbkfnlaksbjdhlfjkasjdbkja,hs
-          </p>
+          <p>jbskjdfasdbkfnlaksbjdhlfjkasjdbkja,hs</p>
         </div>
         <div className="clock-weather-btn">
           <div className="clock-weather">
@@ -58,8 +70,13 @@ function Home() {
             </div>
             {weather && (
               <div className="Weather">
-                <p>ტემპერატურა  : {weather.main.temp}°C</p>
+                <p>ტემპერატურა : {weather.main.temp}°C</p>
                 <p>ამინდი : {weather.weather[0].description}</p>
+              </div>
+            )}
+            {worldTime && (
+              <div className="WorldTime">
+                <p>World Time: {worldTime.datetime}</p>
               </div>
             )}
           </div>
