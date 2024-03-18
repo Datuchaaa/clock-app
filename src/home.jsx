@@ -62,11 +62,9 @@ function Home() {
         <div className="clock-weather-btn">
           <div className="clock-weather">
             <div className="Clock">
-              {time.toLocaleTimeString([], {
-                hour12: false,
-                hour: "2-digit",
-                minute: "2-digit",
-              })}
+             {worldTime && worldTime.datetime && (
+                <p>World Time: {new Date(worldTime.datetime).toLocaleTimeString()}</p>
+              )}
             </div>
             {weather && (
               <div className="Weather">
@@ -76,7 +74,7 @@ function Home() {
             )}
             {worldTime && (
               <div className="WorldTime">
-                <p>World Time: {worldTime.datetime}</p>
+                <p>World Time: </p>
               </div>
             )}
           </div>
