@@ -48,9 +48,11 @@ body {
   }
 }
 .Clock {
-  font-weight: 700;
-  font-size: 200px;
-  color: rgba(255, 255, 255, 1);
+  p {
+    font-weight: 700;
+    font-size: 100px;
+    color: rgba(255, 255, 255, 1);
+  }
 }
 p {
   font-weight: 700;
