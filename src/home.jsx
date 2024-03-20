@@ -50,6 +50,10 @@ function Home() {
     return hour >= 20 || hour < 6;
   };
 
+  const clickMore = () => {
+    console.log("MORE")
+  }
+
   return (
     <div
       className="App"
@@ -62,8 +66,15 @@ function Home() {
         <div className="clock-weather-btn">
           <div className="clock-weather">
             <div className="Clock">
+              <span>GOOD MORNING, IT'S CURRENTLY</span>
               {worldTime && worldTime.datetime && (
-                <p>{new Date(worldTime.datetime).toLocaleTimeString()}</p>
+                <div className="Clock">
+                  {new Date(worldTime.datetime).toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: false
+                  })}
+                </div>
               )}
             </div>
             {weather && (
@@ -75,7 +86,7 @@ function Home() {
             {worldTime && <div className="WorldTime"></div>}
           </div>
 
-          <button>
+          <button onClick={clickMore}>
             M O R E <div className="arrow down"></div>
           </button>
         </div>

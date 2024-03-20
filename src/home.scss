@@ -6,6 +6,11 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
 
+    
+    
+    
+    
+
     .App-header {
       height: 100%;
       display: flex;
@@ -48,11 +53,16 @@ body {
   }
 }
 .Clock {
-  p {
-    font-weight: 700;
-    font-size: 100px;
-    color: rgba(255, 255, 255, 1);
+ 
+  span {
+    font-size: medium;
   }
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  font-weight: 700;
+  font-size: 200px;
+  color: rgba(255, 255, 255, 1);
 }
 p {
   font-weight: 700;
