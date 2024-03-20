@@ -8,6 +8,7 @@ function Home() {
   const [time, setTime] = useState(new Date());
   const [weather, setWeather] = useState(null);
   const [worldTime, setWorldTime] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -51,7 +52,7 @@ function Home() {
   };
 
   const clickMore = () => {
-    console.log("MORE")
+    setShowMore(!showMore);
   }
 
   return (
@@ -63,7 +64,7 @@ function Home() {
         <div className="info">
           <p>jbskjdfasdbkfnlaksbjdhlfjkasjdbkja,hs</p>
         </div>
-        <div className="clock-weather-btn">
+        <div className={`clock-weather-btn ${showMore ? 'active' : ''}`}>
           <div className="clock-weather">
             <div className="Clock">
               <span>GOOD MORNING, IT'S CURRENTLY</span>
