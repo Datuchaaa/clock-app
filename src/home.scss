@@ -6,11 +6,6 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
 
-    
-    
-    
-    
-
     .App-header {
       height: 100%;
       display: flex;
@@ -39,6 +34,11 @@ body {
           background-color: rgba(255, 255, 255, 1);
           border-radius: 35px;
           .arrow {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 30px !important;
             width: 40px;
             height: 40px;
             border-radius: 100%;
@@ -47,16 +47,18 @@ body {
             right: 12px;
             top: 9px;
           }
+          .rotated {
+            transform: rotate(180deg);
+          }
         }
       }
-      .active{
+      .active {
         background-color: red;
       }
     }
   }
 }
 .Clock {
- 
   span {
     font-size: medium;
   }

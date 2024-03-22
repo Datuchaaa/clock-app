@@ -3,6 +3,8 @@ import axios from "axios";
 import "./home.scss";
 import dayBack from "./images/dayBackground.png";
 import nightBack from "./images/nightBackground.jpg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const [time, setTime] = useState(new Date());
@@ -53,7 +55,7 @@ function Home() {
 
   const clickMore = () => {
     setShowMore(!showMore);
-  }
+  };
 
   return (
     <div
@@ -64,7 +66,7 @@ function Home() {
         <div className="info">
           <p>jbskjdfasdbkfnlaksbjdhlfjkasjdbkja,hs</p>
         </div>
-        <div className={`clock-weather-btn ${showMore ? 'active' : ''}`}>
+        <div className={`clock-weather-btn ${showMore ? "active" : ""}`}>
           <div className="clock-weather">
             <div className="Clock">
               <span>GOOD MORNING, IT'S CURRENTLY</span>
@@ -73,7 +75,7 @@ function Home() {
                   {new Date(worldTime.datetime).toLocaleTimeString([], {
                     hour: "2-digit",
                     minute: "2-digit",
-                    hour12: false
+                    hour12: false,
                   })}
                 </div>
               )}
@@ -88,7 +90,10 @@ function Home() {
           </div>
 
           <button onClick={clickMore}>
-            M O R E <div className="arrow down"></div>
+            M O R E{" "}
+            <div className={`arrow down ${showMore ? "rotated" : ""}`}>
+              <FontAwesomeIcon icon={faAngleDown} />
+            </div>
           </button>
         </div>
       </header>
