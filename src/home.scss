@@ -17,6 +17,7 @@ body {
         justify-content: flex-start;
       }
       .clock-weather-btn {
+        transition: 0.3s ease-in-out;
         display: flex;
         justify-content: space-around;
         align-items: center;
@@ -49,13 +50,12 @@ body {
             top: 9px;
           }
           .rotated {
-            
             transform: rotate(180deg);
           }
         }
       }
       .active {
-        background-color: red;
+        transform: translateY(-70%);
       }
     }
   }

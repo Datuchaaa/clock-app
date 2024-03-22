@@ -64,7 +64,7 @@ function Home() {
     >
       <header className="App-header">
         <div className="info">
-          <p>jbskjdfasdbkfnlaksbjdhlfjkasjdbkja,hs</p>
+          <p></p>
         </div>
         <div className={`clock-weather-btn ${showMore ? "active" : ""}`}>
           <div className="clock-weather">
