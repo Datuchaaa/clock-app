@@ -90,7 +90,7 @@ function Home() {
           </div>
 
           <button onClick={clickMore}>
-            {showMore ? "L E S S" : "M O R E"}{" "}
+            {showMore ? "L E S S" : "M O R E"}{" "} 
             <div className={`arrow down ${showMore ? "rotated" : ""}`}>
               <FontAwesomeIcon icon={faAngleDown} />
             </div>
