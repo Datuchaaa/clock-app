@@ -95,12 +95,12 @@ function Home() {
               <FontAwesomeIcon icon={faAngleDown} />
             </div>
           </button>
-          <div className="showmore-info">
-          kljhgdfhjkl
-        </div>
         </div>
         
       </header>
+      <div className="showmore-info">
+          kljhgdfhjkl
+        </div>
     </div>
   );
 }
