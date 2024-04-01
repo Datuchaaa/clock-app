@@ -53,6 +53,12 @@ body {
             transform: rotate(180deg);
           }
         }
+       
+      }
+      .showmore-info{
+        width: 100%;
+        height: 400px;
+        background-color: white;
       }
       .active {
         transform: translateY(-70%); 
