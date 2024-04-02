@@ -96,11 +96,8 @@ function Home() {
             </div>
           </button>
         </div>
-        
       </header>
-      <div className="showmore-info">
-          kljhgdfhjkl
-        </div>
+      <div className="showmore-info">kljhgdfhjkl</div>
     </div>
   );
 }
