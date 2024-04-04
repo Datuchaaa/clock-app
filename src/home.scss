@@ -53,22 +53,26 @@ body {
             transform: rotate(180deg);
           }
         }
-       
       }
-      
+
       .active {
-        transform: translateY(-70%); 
+        transform: translateY(-70%);
       }
     }
   }
 }
-.showmore-info{
-  overflow:hidden;
+.showmore-info {
+  display: none;
+  overflow: hidden;
   width: 100%;
   height: 300px;
   background-color: white;
-  opacity: 20%;
 }
+
+.showmore-info.active {
+  display: block; /* or any other display value as per your requirement */
+}
+
 .Clock {
   span {
     font-size: medium;

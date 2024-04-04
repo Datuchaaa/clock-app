@@ -6,7 +6,6 @@ import nightBack from "./images/nightBackground.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 
-
 function Home() {
   const [time, setTime] = useState(new Date());
   const [weather, setWeather] = useState(null);
@@ -97,9 +96,12 @@ function Home() {
             </div>
           </button>
         </div>
-        <div className="showmore-info">test</div>
+        {showMore && (
+          <div className={`showmore-info ${showMore ? "active" : ""}`}>
+            test
+          </div>
+        )}
       </header>
-      
     </div>
   );
 }
