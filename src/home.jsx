@@ -97,8 +97,9 @@ function Home() {
             </div>
           </button>
         </div>
+        <div className="showmore-info">test</div>
       </header>
-      <div className="showmore-info">test</div>
+      
     </div>
   );
 }
