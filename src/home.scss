@@ -63,11 +63,11 @@ body {
   }
 }
 .showmore-info {
-  position: absolute;
+
   bottom: 0; /* Position it at the bottom of the container */
   transform: translateY(100%); /* Start position - off-screen */
   width: 100%;
-  height: 250px;
+  height: 350px;
   background-color: white;
   opacity: 0;
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Apply transition to transform and opacity */
@@ -80,7 +80,6 @@ body {
 }
 
 .clock-weather-btn-info {
-  position: relative;
   display: flex;
   flex-direction: column;
 }
