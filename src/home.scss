@@ -57,26 +57,23 @@ body {
       }
 
       .active {
-        transform: translateY(-70%);
+        transform: translateY(-40%);
       }
     }
   }
 }
 .showmore-info {
-
   bottom: 0; /* Position it at the bottom of the container */
   transform: translateY(100%); /* Start position - off-screen */
   width: 100%;
   height: 350px;
   background-color: white;
   opacity: 0;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out; /* Apply transition to transform and opacity */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
 .showmore-info.active {
-  opacity: 25%;
-
-
+  opacity: 70%;
 }
 
 .clock-weather-btn-info {
@@ -98,5 +95,10 @@ body {
 p {
   font-weight: 700;
   font-size: 24px;
-  color: rgba(255, 255, 255, 1);
+ 
+}
+.weather {
+  color: black;
+  width: 100%;
+  height: 200px;
 }

@@ -81,12 +81,7 @@ function Home() {
                   </div>
                 )}
               </div>
-              {weather && (
-                <div className="Weather">
-                  <p>ტემპერატურა : {weather.main.temp}°C</p>
-                  <p>ამინდი : {weather.weather[0].description}</p>
-                </div>
-              )}
+
               {worldTime && <div className="WorldTime"></div>}
             </div>
 
@@ -97,11 +92,17 @@ function Home() {
               </div>
             </button>
           </div>
-          
-            <div className={`showmore-info ${showMore ? "active" : ""}`}>
-              test
+
+          <div className={`showmore-info ${showMore ? "active" : ""}`}>
+            <div className="weather">
+              {weather && (
+                <div className="Weather">
+                  <p>ტემპერატურა : {weather.main.temp}°C</p>
+                  <p>ამინდი : {weather.weather[0].description}</p>
+                </div>
+              )}
             </div>
-          
+          </div>
         </div>
       </header>
     </div>
