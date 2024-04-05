@@ -66,41 +66,43 @@ function Home() {
         <div className="info">
           <p></p>
         </div>
-        <div className={`clock-weather-btn ${showMore ? "active" : ""}`}>
-          <div className="clock-weather">
-            <div className="Clock">
-              <span>GOOD MORNING, IT'S CURRENTLY</span>
-              {worldTime && worldTime.datetime && (
-                <div className="Clock">
-                  {new Date(worldTime.datetime).toLocaleTimeString([], {
-                    hour: "2-digit",
-                    minute: "2-digit",
-                    hour12: false,
-                  })}
+        <div className="clock-weather-btn-info">
+          <div className={`clock-weather-btn ${showMore ? "active" : ""}`}>
+            <div className="clock-weather">
+              <div className="Clock">
+                <span>GOOD MORNING, IT'S CURRENTLY</span>
+                {worldTime && worldTime.datetime && (
+                  <div className="Clock">
+                    {new Date(worldTime.datetime).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                      hour12: false,
+                    })}
+                  </div>
+                )}
+              </div>
+              {weather && (
+                <div className="Weather">
+                  <p>ტემპერატურა : {weather.main.temp}°C</p>
+                  <p>ამინდი : {weather.weather[0].description}</p>
                 </div>
               )}
+              {worldTime && <div className="WorldTime"></div>}
             </div>
-            {weather && (
-              <div className="Weather">
-                <p>ტემპერატურა : {weather.main.temp}°C</p>
-                <p>ამინდი : {weather.weather[0].description}</p>
-              </div>
-            )}
-            {worldTime && <div className="WorldTime"></div>}
-          </div>
 
-          <button onClick={clickMore}>
-            {showMore ? "L E S S" : "M O R E"}{" "}
-            <div className={`arrow down ${showMore ? "rotated" : ""}`}>
-              <FontAwesomeIcon icon={faAngleDown} />
-            </div>
-          </button>
-        </div>
-        {showMore && (
-          <div className={`showmore-info ${showMore ? "active" : ""}`}>
-            test
+            <button onClick={clickMore}>
+              {showMore ? "L E S S" : "M O R E"}{" "}
+              <div className={`arrow down ${showMore ? "rotated" : ""}`}>
+                <FontAwesomeIcon icon={faAngleDown} />
+              </div>
+            </button>
           </div>
-        )}
+          
+            <div className={`showmore-info ${showMore ? "active" : ""}`}>
+              test
+            </div>
+          
+        </div>
       </header>
     </div>
   );
