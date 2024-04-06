@@ -41,7 +41,7 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    const fetchWorldTime = async () => {
+    const fetcWeek = async () => {
       try {
         const response = await axios.get("https://worldtimeapi.org/api/ip");
         setWorldTime(response.data);
@@ -50,7 +50,7 @@ function Home() {
       }
     };
 
-    fetchWorldTime();
+    fetcWeek();
   }, []);
 
   useEffect(() => {
