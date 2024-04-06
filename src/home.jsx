@@ -41,6 +41,19 @@ function Home() {
   }, []);
 
   useEffect(() => {
+    const fetchWorldTime = async () => {
+      try {
+        const response = await axios.get("https://worldtimeapi.org/api/ip");
+        setWorldTime(response.data);
+      } catch (error) {
+        console.error("Error fetching world time data:", error);
+      }
+    };
+
+    fetchWorldTime();
+  }, []);
+
+  useEffect(() => {
     const timer = setInterval(() => {
       setTime(new Date());
     }, 1000);
