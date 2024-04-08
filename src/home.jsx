@@ -112,12 +112,12 @@ function Home() {
             <div className="">
               {apiData && (
                 <div className="weather timezone">
-                  Current Time Zone : {apiData.timezone}
+                  Current Time Zone<h2>{apiData.timezone}</h2>
                 </div>
               )}
               {apiData && (
                 <div className="weather dayoftheyear">
-                  Day of the year : {apiData.day_of_year}
+                  Day of the year <h2>{apiData.day_of_year}</h2>
                 </div>
               )}
             </div>
