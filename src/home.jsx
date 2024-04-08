@@ -3,7 +3,7 @@ import axios from "axios";
 import "./home.scss";
 import dayBack from "./images/dayBackground.png";
 import nightBack from "./images/nightBackground.jpg";
-import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
@@ -11,7 +11,7 @@ function Home() {
   const [weather, setWeather] = useState(null);
   const [worldTime, setWorldTime] = useState(null);
   const [showMore, setShowMore] = useState(false);
-  const [apiData, setApiData] = useState(false)
+  const [apiData, setApiData] = useState(false);
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -70,7 +70,7 @@ function Home() {
   const clickMore = () => {
     setShowMore(!showMore);
   };
-  const moon = <FontAwesomeIcon icon={faMoon} />
+  const moon = <FontAwesomeIcon icon={faMoon} />;
 
   return (
     <div
@@ -109,6 +109,18 @@ function Home() {
           </div>
 
           <div className={`showmore-info ${showMore ? "active" : ""}`}>
+            <div className="">
+              {apiData && (
+                <div className="weather timezone">
+                  Current Time Zone : {apiData.timezone}
+                </div>
+              )}
+              {apiData && (
+                <div className="weather dayoftheyear">
+                  Day of the year : {apiData.day_of_year}
+                </div>
+              )}
+            </div>
             <div className="weather">
               {weather && (
                 <div className="Weather">
@@ -116,10 +128,15 @@ function Home() {
                   <p>ამინდი : {weather.weather[0].description}</p>
                 </div>
               )}
-              {apiData && <div className="Week">Week Number : {apiData.week_number}</div>}
-              {apiData && <div className="Week">Current Time Zone : {apiData.timezone}</div>}
-              {apiData && <div className="Week">Day of the year : {apiData.day_of_year}</div>}
-              {apiData && <div className="Week">Day of the week : {apiData.day_of_week}</div>}
+              {apiData && (
+                <div className="Week">Week Number : {apiData.week_number}</div>
+              )}
+
+              {apiData && (
+                <div className="Week">
+                  Day of the week : {apiData.day_of_week}
+                </div>
+              )}
             </div>
           </div>
         </div>
