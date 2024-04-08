@@ -11,12 +11,13 @@ function Home() {
   const [weather, setWeather] = useState(null);
   const [worldTime, setWorldTime] = useState(null);
   const [showMore, setShowMore] = useState(false);
+  const [apiData, setApiData] = useState(false)
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather?q=kutaisi&appid=f4ae3de0bdc58aaca724764be343a043&units=metric`
+          `https://api.openweathermap.org/data/2.5/weather?q=tbilisi&appid=f4ae3de0bdc58aaca724764be343a043&units=metric`
         );
         setWeather(response.data);
       } catch (error) {
@@ -41,16 +42,16 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    const fetcWeek = async () => {
+    const fetchWeek = async () => {
       try {
         const response = await axios.get("https://worldtimeapi.org/api/ip");
-        setWorldTime(response.data);
+        setApiData(response.data);
       } catch (error) {
         console.error("Error fetching world time data:", error);
       }
     };
 
-    fetcWeek();
+    fetchWeek();
   }, []);
 
   useEffect(() => {
@@ -114,6 +115,10 @@ function Home() {
                   <p>ამინდი : {weather.weather[0].description}</p>
                 </div>
               )}
+              {apiData && <div className="Week">Week Number : {apiData.week_number}</div>}
+              {apiData && <div className="Week">Current Time Zone : {apiData.timezone}</div>}
+              {apiData && <div className="Week">Day of the year : {apiData.day_of_year}</div>}
+              {apiData && <div className="Week">Day of the week : {apiData.day_of_week}</div>}
             </div>
           </div>
         </div>
