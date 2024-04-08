@@ -3,8 +3,8 @@ import axios from "axios";
 import "./home.scss";
 import dayBack from "./images/dayBackground.png";
 import nightBack from "./images/nightBackground.jpg";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faAngleDown, faMoon } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const [time, setTime] = useState(new Date());
@@ -70,6 +70,7 @@ function Home() {
   const clickMore = () => {
     setShowMore(!showMore);
   };
+  const moon = <FontAwesomeIcon icon={faMoon} />
 
   return (
     <div
@@ -84,7 +85,7 @@ function Home() {
           <div className={`clock-weather-btn ${showMore ? "active" : ""}`}>
             <div className="clock-weather">
               <div className="Clock">
-                <span>GOOD MORNING, IT'S CURRENTLY</span>
+                <span>{moon} GOOD MORNING, IT'S CURRENTLY</span>
                 {worldTime && worldTime.datetime && (
                   <div className="Clock">
                     {new Date(worldTime.datetime).toLocaleTimeString([], {
