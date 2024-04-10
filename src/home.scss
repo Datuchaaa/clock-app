@@ -99,8 +99,15 @@ p {
   font-size: 24px;
  
 }
+.year-time-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  text-align: left;
+}
 h2 {
   font-size: 56px;
+  margin: 0;
 }
 .weather {
   color: rgba(255, 255, 255, 1);

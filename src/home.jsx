@@ -109,7 +109,7 @@ function Home() {
           </div>
 
           <div className={`showmore-info ${showMore ? "active" : ""}`}>
-            <div className="">
+            <div className="year-time-wrapper">
               {apiData && (
                 <div className="weather timezone">
                   Current Time Zone<h2>{apiData.timezone}</h2>
