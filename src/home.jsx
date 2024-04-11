@@ -4,7 +4,7 @@ import "./home.scss";
 import dayBack from "./images/dayBackground.png";
 import nightBack from "./images/nightBackground.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
   const [time, setTime] = useState(new Date());
@@ -71,6 +71,7 @@ function Home() {
     setShowMore(!showMore);
   };
   const moon = <FontAwesomeIcon icon={faMoon} />;
+   const sun = <FontAwesomeIcon icon={faSun} />
 
   return (
     <div
