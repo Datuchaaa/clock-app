@@ -71,7 +71,7 @@ function Home() {
     setShowMore(!showMore);
   };
   const moon = <FontAwesomeIcon icon={faMoon} />;
-   const sun = <FontAwesomeIcon icon={faSun} />
+  const sun = <FontAwesomeIcon icon={faSun} />;
 
   return (
     <div
@@ -86,7 +86,13 @@ function Home() {
           <div className={`clock-weather-btn ${showMore ? "active" : ""}`}>
             <div className="clock-weather">
               <div className="Clock">
-                <span>{moon} GOOD MORNING, IT'S CURRENTLY</span>
+                <span>
+                  {isNightTime() ? (
+                    <>{moon} GOOD EVENING, IT'S CURRENTLY</>
+                  ) : (
+                    <>{sun} GOOD MORNING, IT'S CURRENTLY</>
+                  )}
+                </span>
                 {worldTime && worldTime.datetime && (
                   <div className="Clock">
                     {new Date(worldTime.datetime).toLocaleTimeString([], {
