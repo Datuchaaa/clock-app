@@ -55,12 +55,15 @@ function Home() {
   }, []);
 
   useEffect(() => {
-    const timer = setInterval(() => {
+    const timerID = setInterval(() => {
+      // Update the state with the current time
       setTime(new Date());
-    }, 1000);
-
-    return () => clearInterval(timer);
-  }, []);
+    }, 1000); // Update every second
+  
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(timerID);
+  }, []); // Empty dependency array to ensure the effect runs only once on mount
+  
 
   const isNightTime = () => {
     const hour = time.getHours();
