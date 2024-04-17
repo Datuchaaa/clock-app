@@ -1,6 +1,7 @@
 body {
   position: relative;
   background-color: black;
+  overflow: hidden;
   .App {
     overflow: hidden;
     background-size: cover;
@@ -19,6 +20,7 @@ body {
         justify-content: flex-start;
       }
       .clock-weather-btn {
+        
         transition: 0.3s ease-in-out;
         display: flex;
         justify-content: space-around;
@@ -56,19 +58,23 @@ body {
           }
         }
       }
-
-      .active {
-        bottom: 50%;
+      .clock-weather-btn.active{
+        transform: translateY(-50%)
       }
+
+     
     }
   }
 }
 .showmore-info {
+  position: absolute;
+  bottom: 0;
   display: flex;
   justify-content: space-evenly;
   bottom: 0; 
   transform: translateY(100%);
   width: 100%;
+  bottom: -12%;
   height: 350px;
   background-color: rgb(5, 5, 5);
   opacity: 0;
@@ -77,6 +83,7 @@ body {
 
 .showmore-info.active {
   opacity: 70%;
+  transform: translateY(-25%);
 }
 
 .clock-weather-btn-info {
